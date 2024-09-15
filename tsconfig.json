@@ -1,0 +1,18 @@
+{
+  "compilerOptions": {
+    "module": "commonjs", // Important: CommonJS module for Node.js
+    "target": "es6", // ES6 target
+    "outDir": "./dist", // Output folder for compiled JS files
+    "rootDir": "./lib", // Source files directory
+    "strict": true,
+    "esModuleInterop": true, // Allows interop with ES modules
+    "declaration": true // Generates .d.ts files for typings
+  },
+  "include": [
+    "lib/**/*"
+  ],
+  "exclude": [
+    "node_modules",
+    "dist"
+  ]
+}
