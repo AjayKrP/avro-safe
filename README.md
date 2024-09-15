@@ -2,13 +2,14 @@
 
 **avro-safe** is a robust and flexible Avro schema validation package designed to handle complex validation cases with ease. Whether you're dealing with required fields, optional fields, or fields with default values, **avro-safe** ensures your payloads conform to the Avro schema while providing clear and concise error reporting.
 
-### Features:
+### Features
 - **Default Values**: Fields with default values are automatically handled. If a field is missing from the payload, the default is used. If present, the field’s type is validated.
 - **Null & Undefined Handling**: Supports `null` and `undefined` values gracefully, following the schema’s requirements.
 - **Required Fields**: Ensures all required fields are present and correctly typed.
 - **Comprehensive Error Reporting**: Clear and actionable error messages for missing or mismatched fields.
+- **Nested Fields Validation**: Supports recursive validation for nested records and arrays.
 
-### Installation:
+### Installation
 
 To install **avro-safe**, use npm:
 
@@ -16,7 +17,9 @@ To install **avro-safe**, use npm:
 npm install avro-safe
 ```
 
-### Usage (TypeScript):
+### Usage (TypeScript)
+
+Here's how to use **avro-safe** to validate a payload against an Avro schema:
 
 ```typescript
 import { validateAvroPayload } from 'avro-safe';
@@ -62,14 +65,15 @@ if (errors.length > 0) {
 }
 ```
 
-### Validation Logic:
+### Validation Logic
 
 1. **Required Fields**: If a required field is missing, an error is generated.
 2. **Default Values**: Fields with default values are automatically validated or ignored if absent.
 3. **Optional Fields**: If a field is `null` or `undefined` and the schema allows it, validation passes.
-4. **Clear Error Messages**: Any type mismatches or missing fields will produce detailed error messages.
+4. **Nested Fields**: Handles validation for nested records and arrays.
+5. **Clear Error Messages**: Any type mismatches or missing fields will produce detailed error messages.
 
-### Examples:
+### Examples
 
 #### Valid Payload
 
@@ -101,5 +105,13 @@ const invalidErrors: string[] = validateAvroPayload(schema, invalidPayload);
 console.log(invalidErrors);  // ["Field 'country' is null, but null is not allowed", "Missing required field: 'kind'"]
 ```
 
-### Contribute:
+### Contribute
+
 Feel free to open issues and submit pull requests for feature enhancements, bug fixes, or improvements!
+
+```
+
+### Changes:
+- **Added Nested Fields**: Included in the features section.
+- **Updated Usage Examples**: Provided examples for valid and invalid payloads.
+- **Enhanced Validation Logic**: Detailed how nested fields are validated and how different field types are handled.

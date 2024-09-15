@@ -1,6 +1,6 @@
 {
   "name": "avro-safe",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "A powerful and flexible Avro schema validation package",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
