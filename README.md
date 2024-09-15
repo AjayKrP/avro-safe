@@ -109,8 +109,6 @@ console.log(invalidErrors);  // ["Field 'country' is null, but null is not allow
 
 Feel free to open issues and submit pull requests for feature enhancements, bug fixes, or improvements!
 
-```
-
 ### Changes:
 - **Added Nested Fields**: Included in the features section.
 - **Updated Usage Examples**: Provided examples for valid and invalid payloads.
